@@ -6,6 +6,8 @@ module.exports = {
     try {
       //the Post.find() function is the name "Post" given to the schema in "/models/Post.js"
       const posts = await Post.find({ user: req.user.id });
+      //views are going through the controller first
+      //two views do no speak to each other. always through the controller
       res.render("profile.ejs", { posts: posts, user: req.user });
     } catch (err) {
       console.log(err);

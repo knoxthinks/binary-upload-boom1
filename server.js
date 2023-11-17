@@ -55,6 +55,11 @@ app.use(flash());
 
 //Setup Routes For Which The Server Is Listening
 app.use("/", mainRoutes);
+///views/profile.ejs has some code to call this route
+//you should follow the "postRoutes"
+//after /post is called, it runs "post Routes"
+//redirects you to /routes/post.js
+//the route for /createPost is there
 app.use("/post", postRoutes);
 
 //Server Running
