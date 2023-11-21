@@ -32,17 +32,27 @@ module.exports = {
   createPost: async (req, res) => {
     try {
       // Upload image to cloudinary
+      //we are using the "result" of the await cloudinary to input into the
+      //post model
       const result = await cloudinary.uploader.upload(req.file.path);
 
+      //the inputs from the form will populate this schema
+      //information from the form
+      //information from the "req"
       await Post.create({
+        //data from the request
         title: req.body.title,
+        //data from the cloudinary upload
         image: result.secure_url,
         cloudinaryId: result.public_id,
         caption: req.body.caption,
+        //manual set to 0
         likes: 0,
+        //data from authentication
         user: req.user.id,
       });
       console.log("Post has been added!");
+      //after the log, brings you back to the submite form page of your user
       res.redirect("/profile");
     } catch (err) {
       console.log(err);
