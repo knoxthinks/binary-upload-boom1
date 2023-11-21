@@ -2,6 +2,15 @@
     - ability ot delete each comment which is only visible to the user
     who submitted the comment.
 
-the user who crated the comment
+the user who created the comment
+-a button
+-ID of user
+-conditional in the view
+    -if log inned user ID == comment userID
+    -show these comments
+- a controller with the delete method
+- a route to the controller
+- db storage aka a collections of the user who created the comment
 
 2. Add the username associated with each comment to the text
+- find the username based on the userID attached to the comment
