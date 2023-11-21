@@ -7,9 +7,10 @@ module.exports = {
         comment: req.body.comment,
         likes: 0,
         post: req.params.id,
+        //TODO - add new properties to each new document
       });
       console.log("Comment has been added!");
-      res.redirect("/post/"+req.params.id);
+      res.redirect("/post/" + req.params.id);
     } catch (err) {
       console.log(err);
     }
