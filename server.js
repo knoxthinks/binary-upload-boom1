@@ -10,6 +10,7 @@ const logger = require("morgan");
 const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const postRoutes = require("./routes/posts");
+const commentRoutes = require("./routes/comments");
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -61,6 +62,7 @@ app.use("/", mainRoutes);
 //redirects you to /routes/post.js
 //the route for /createPost is there
 app.use("/post", postRoutes);
+app.use("/comment", commentRoutes);
 
 //Server Running
 app.listen(process.env.PORT, () => {
