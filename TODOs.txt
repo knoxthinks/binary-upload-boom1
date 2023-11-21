@@ -1,0 +1,7 @@
+1. create a delete button.
+    - ability ot delete each comment which is only visible to the user
+    who submitted the comment.
+
+the user who crated the comment
+
+2. Add the username associated with each comment to the text
