@@ -19,4 +19,12 @@ module.exports = {
       console.log(err);
     }
   },
+  deleteComments: async (req, res) => {
+    try {
+      await Comment.deleteOne({ _id: req.params.commentid });
+      res.redirect("/post/" + req.params.postid);
+    } catch (err) {
+      console.log(err);
+    }
+  },
 };
