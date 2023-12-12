@@ -38,10 +38,20 @@
       </form>
     </div>
     <ul>
+      <!-- add: username and delete button-->
       <% for(var i=0; i<comments.length; i++) {%>
         <li class="col-6 justify-content-between mt-5">
+           User <%= comments[i].createdBy%> commented:
           <%= comments[i].comment%>
+          <form
+          action="/comment/deleteComment/:postid/:commentid?_method=DELETE"
+          method="POST"
+          class="col-3"
+        >
+          <button class="btn btn-primary fa fa-trash" type="submit"></button>
+        </form>
         </li>
+        
       <% } %>
     </ul>
     <div class="col-6 mt-5">
