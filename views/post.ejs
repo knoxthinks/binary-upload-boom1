@@ -44,11 +44,10 @@
            User <%= comments[i].createdBy%> commented:
           <%= comments[i].comment%>
           <form
-          action="/comment/deleteComment/:postid/:commentid?_method=DELETE"
+          action="/comment/deleteComment/<%= post._id %>/<%= comments[i]._id %>?_method=DELETE"
           method="POST"
-          class="col-3"
         >
-          <button class="btn btn-primary fa fa-trash" type="submit"></button>
+          <button class="btn btn-outline-danger" type="submit">delete</button>
         </form>
         </li>
         
